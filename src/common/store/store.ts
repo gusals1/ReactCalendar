@@ -1,18 +1,16 @@
 import { atom } from "recoil";
+export interface Event {
+  content: string[];
+}
 
-export const useRecoilTodo = atom({
-  key: "useRecoilTodo",
-  default: [
-    {
-      id: 1,
-      content: "Racing car sprays burning fuel into crowd.",
-      check: true,
-    },
-    {
-      id: 2,
-      content: "Australian walks 100km after outback crash.",
-      check: false,
-    },
-    { id: 3, content: "Man charged over missing wedding girl.", check: false },
-  ],
+export interface EventListType {
+  [key: string]: Event;
+}
+
+export const eventListState = atom<EventListType>({
+  key: "eventListState",
+  default: {
+    "2024-09-07": { content: ["이벤트1", "이벤트 추가 1"] },
+    "2024-09-15": { content: ["이벤트2"] },
+  },
 });
