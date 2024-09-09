@@ -1,40 +1,61 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# CalendarApp
 
-## Getting Started
+## 소개
 
-First, run the development server:
+`CalendarApp`은 날짜를 선택하고 해당 날짜에 이벤트를 추가할 수 있는 캘린더 애플리케이션입니다. 
+Ant Design의 `Calendar` 컴포넌트를 사용하여 월별 일정을 표시하며, 일정 추가 버튼을 통해 일정을 추가할 수 있습니다.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 기능
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **월별 달력 보기**: 월별 달력을 보고 날짜를 선택할 수 있습니다.
+- **이전/다음 월 보기**: 달력 상단에 버튼을 통해 이전 달과 다음 달로 이동할 수 있습니다.
+- **이벤트 추가**: "일정 추가" 버튼을 클릭하여 모달 창을 열고, 날짜와 이벤트를 입력하여 추가할 수 있습니다.
+- **이벤트 표시**: 선택한 날짜에 대한 이벤트가 달력 셀에 표시됩니다.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## 설치
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+1. **프로젝트 클론**
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+    ```bash
+    git clone https://github.com/gusals1/ReactCalendar.git
+    ```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+2. **종속성 설치**
 
-## Learn More
+    ```bash
+    cd ReactCalendar-main
+    yarn install
+    ```
 
-To learn more about Next.js, take a look at the following resources:
+3. **서버 실행**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+    ```bash
+    yarn dev
+    ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+4. **브라우저 주소**
 
-## Deploy on Vercel
+    `http://localhost:3000/calendar`로 접속하여 애플리케이션을 확인할 수 있습니다.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 사용법
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- **캘린더 보기**: 기본 화면에 월별 달력이 표시됩니다.
+- **월 변경**: 상단의 "이전" 및 "다음" 버튼을 클릭하여 달력을 변경할 수 있습니다.
+- **이벤트 추가**: 상단의 "일정 추가" 버튼을 클릭하여 모달 창을 열고, 날짜와 이벤트를 입력하여 추가합니다.
+- **이벤트 확인**: 달력의 날짜 셀에 추가된 이벤트가 표시됩니다.
+
+## 주요 컴포넌트
+
+- **CalendarApp**: 캘린더 컴포넌트를 렌더링하고, 셀과 헤더를 커스터마이즈합니다.
+- **CalendarHeader**: 달력 헤더를 렌더링하고, 날짜 변경 및 모달 열기/닫기 기능을 제공합니다.
+- **DateModal**: 이벤트 추가 모달 창을 렌더링하고, 폼을 통해 이벤트를 추가합니다.
+- **useAddEventList**: 이벤트를 추가하는 로직을 처리하는 커스텀 훅입니다.
+- **cellRender**: 캘린더 셀을 커스터마이즈합니다.
+
+## 기술 스택
+
+- **React**: UI 라이브러리
+- **Ant Design**: UI 컴포넌트 라이브러리
+- **Day.js**: 날짜 및 시간 처리
+- **Recoil**: 상태 관리
+
